@@ -1,0 +1,61 @@
+Instructions I used for starting an OpenCV project using Visual Studio 2022 on Windows. Futher documentation 
+can be found on OpenCVs website. 
+
+0. Add bin path to system path environment variables (done once)
+- opencv/build/x64/vc15/bin (copy path)
+- go to system -> advanced system settings -> Environment Variables -> System variables, Path -> edit
+- paste path to beginning, separate with semi colon
+
+
+1. Open Visual Studio, Create a new project, empty project. 
+2. Create new c++ file, main.cpp
+3. paste initial source code:
+
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <iostream>
+#include <cmath>
+using namespace cv;
+
+std::string output_path = "data\\output\\";
+std::string input_path = "data\\input\\";
+
+void show_image(Mat img, std::string window_name = "New Window", int xplace = 0, int yplace = 0) {
+    //create window with name, show window, place window
+    namedWindow(window_name, WINDOW_AUTOSIZE);
+    imshow(window_name, img);
+    moveWindow(window_name, xplace, yplace);
+}
+
+void save_image(Mat img, std::string end_file_name) {
+    std::string img_path = output_path + end_file_name;
+    imwrite(img_path, img);
+}
+
+int main()
+{
+    //loading images to program
+    std::string lena_path = input_path + "lena.png";
+    Mat lena = imread(lena_path);
+
+    show_image(lena, "lena.png");
+
+    //clean up and shut down program on key press
+    waitKey(0);
+    destroyAllWindows();
+
+    return 0;
+}
+
+***Creating build***
+4. Project -> *project name* properties -> Configuration = Release, Platform = x64
+5. Expand C/C++ -> General -> Additional Include Directories -> provide include folder
+    select this folder: ...\opencv\build\include (find in popup window)
+6. Linker -> General -> Additional Library Directories
+    select this folder: ...\opencv\build\x64\vc16\lib (find in popup window)
+7. Input -> Additional dependencies -> dropdown and edit ->
+    from here: ...\opencv\build\x64\vc16\lib, select this text of file name: opencv_world470.lib
+    paste file name
+8. in VS main window, modify version to Release
+9. Build solution
