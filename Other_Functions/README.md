@@ -14,3 +14,6 @@ Contours, all and outer:
 ![outer](ExampleImages/outerc.jpg)  
 heatmap used to identify facial regions:  
 ![heat](ExampleImages/fheat.jpg)  
+get blue color channel from heatmap, threshold the blue parts  
+to identify feature locations  
+![thresh](ExampleImages/bluethresh.jpg)
