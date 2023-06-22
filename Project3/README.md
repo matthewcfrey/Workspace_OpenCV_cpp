@@ -13,8 +13,8 @@ Examples of custom feature detection, along with SIFT and Canny
 Original  
 ![ec](ExampleImages/ec.jpg)   
 Detections  
-![eccan](ExampleImages/EczemaCANNY.jpg) 
-![ecsift](ExampleImages/EczemaSIFT.jpg) 
-![ecthreshold](ExampleImages/Eczema_Feature_Extraction.jpg) 
+![eccan](ExampleImages/EczemaCANNY.jpg)  
+![ecsift](ExampleImages/EczemaSIFT.jpg)  
+![ecthreshold](ExampleImages/EczemaFeatureExtraction.jpg) 
 
 
