@@ -5,8 +5,8 @@ The project includes
 - Canny edge detection
 
 Low pass and high pass filters used in frequency domain represented in BGR domain:  
-![lowpass](ExampleImages/lowpass_filter.jpg) 
-![highpass](ExampleImages/highpass_filter.jpg)   
+![lowpass](ExampleImages/lowpassfilter.jpg)  
+![highpass](ExampleImages/highpassfilter.jpg)  
 Example of frequency magnitude shown in BGR domain:   
 ![magec](ExampleImages/magec.jpg)  
 Examples of custom feature detection, along with SIFT and Canny  
